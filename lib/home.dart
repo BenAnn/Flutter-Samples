@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_samples/floatNavigator.dart';
+import 'package:flutter_samples/GridItem.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -18,24 +18,15 @@ class Home extends StatelessWidget {
             sliver: SliverGrid.count(
               crossAxisCount: 3,
               children: <Widget>[
-                GestureDetector(
-                  child: Container(
-                    alignment: Alignment.bottomCenter,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        image: DecorationImage(
-                            image: AssetImage('images/float_navigator.png'),
-                            fit: BoxFit.cover)),
-                    child: Text('Float Navigator',
-                        style: TextStyle(height: 1.5, color: Colors.white)),
-                  ),
-                  onTap: () {
-                    Navigator.push(context,
-                        CupertinoPageRoute(builder: (BuildContext context) {
-                      return FloatNavigator();
-                    }));
-                  },
-                ),
+                GridItem(
+                    cover: 'images/float_navigator.png',
+                    title: 'Float Navigator',
+                    path: '/navigator'),
+                GridItem(
+                    cover: 'images/carousel.gif',
+                    title: 'Carousel',
+                    color: Colors.red,
+                    path: '/carousel'),
               ],
               childAspectRatio: 0.78,
               crossAxisSpacing: 10.0,
