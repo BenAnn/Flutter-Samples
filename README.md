@@ -5,4 +5,9 @@
 效果列表：
  
  - Float Navigator
+ 
  ![Float Navigator](images/float_navigator.png)
+ 
+ - Carousel
+ 
+ ![Carousel](images/carousel.gif)
