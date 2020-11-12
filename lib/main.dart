@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_samples/carousel/carousel.dart';
+import 'package:flutter_samples/singlecarousel/SingleCarousel.dart';
 import 'package:flutter_samples/floatNavigator.dart';
 import 'package:flutter_samples/home.dart';
 
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       home: Home(),
       routes: {
         '/navigator': (BuildContext context) => FloatNavigator(),
-        '/carousel': (BuildContext context) => Carousel()
+        '/carousel': (BuildContext context) => Carousel(),
+        '/singlecarousel': (BuildContext context) => SingleCarousel(),
       },
     );
   }

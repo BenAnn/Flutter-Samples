@@ -27,6 +27,11 @@ class Home extends StatelessWidget {
                     title: 'Carousel',
                     color: Colors.red,
                     path: '/carousel'),
+                GridItem(
+                    cover: 'images/carousel.gif',
+                    title: 'singlecarousel',
+                    color: Colors.red,
+                    path: '/singlecarousel'),
               ],
               childAspectRatio: 0.78,
               crossAxisSpacing: 10.0,
