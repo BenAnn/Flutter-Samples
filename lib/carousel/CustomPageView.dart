@@ -37,17 +37,18 @@ class CustomPageView extends StatefulWidget {
   /// children because constructing the [List] requires doing work for every
   /// child that could possibly be displayed in the page view, instead of just
   /// those children that are actually visible.
-  CustomPageView({
-    Key key,
-    this.scrollDirection = Axis.horizontal,
-    this.reverse = false,
-    PageController controller,
-    this.physics,
-    this.pageSnapping = true,
-    this.onPageChanged,
-    List<Widget> children = const <Widget>[],
-    this.dragStartBehavior = DragStartBehavior.start,
-  })  : controller = controller ?? _defaultPageController,
+  CustomPageView(
+      {Key key,
+      this.scrollDirection = Axis.horizontal,
+      this.reverse = false,
+      PageController controller,
+      this.physics,
+      this.pageSnapping = true,
+      this.onPageChanged,
+      List<Widget> children = const <Widget>[],
+      this.dragStartBehavior = DragStartBehavior.start,
+      this.loop})
+      : controller = controller ?? _defaultPageController,
         childrenDelegate = SliverChildListDelegate(children),
         super(key: key);
 
@@ -63,35 +64,37 @@ class CustomPageView extends StatefulWidget {
   ///
   /// [itemBuilder] will be called only with indices greater than or equal to
   /// zero and less than [itemCount].
-  CustomPageView.builder({
-    Key key,
-    this.scrollDirection = Axis.horizontal,
-    this.reverse = false,
-    PageController controller,
-    this.physics,
-    this.pageSnapping = true,
-    this.onPageChanged,
-    @required IndexedWidgetBuilder itemBuilder,
-    int itemCount,
-    this.dragStartBehavior = DragStartBehavior.start,
-  })  : controller = controller ?? _defaultPageController,
+  CustomPageView.builder(
+      {Key key,
+      this.scrollDirection = Axis.horizontal,
+      this.reverse = false,
+      PageController controller,
+      this.physics,
+      this.pageSnapping = true,
+      this.onPageChanged,
+      @required IndexedWidgetBuilder itemBuilder,
+      int itemCount,
+      this.dragStartBehavior = DragStartBehavior.start,
+      this.loop})
+      : controller = controller ?? _defaultPageController,
         childrenDelegate =
             SliverChildBuilderDelegate(itemBuilder, childCount: itemCount),
         super(key: key);
 
   /// Creates a scrollable list that works page by page with a custom child
   /// model.
-  CustomPageView.custom({
-    Key key,
-    this.scrollDirection = Axis.horizontal,
-    this.reverse = false,
-    PageController controller,
-    this.physics,
-    this.pageSnapping = true,
-    this.onPageChanged,
-    @required this.childrenDelegate,
-    this.dragStartBehavior = DragStartBehavior.start,
-  })  : assert(childrenDelegate != null),
+  CustomPageView.custom(
+      {Key key,
+      this.scrollDirection = Axis.horizontal,
+      this.reverse = false,
+      PageController controller,
+      this.physics,
+      this.pageSnapping = true,
+      this.onPageChanged,
+      @required this.childrenDelegate,
+      this.dragStartBehavior = DragStartBehavior.start,
+      this.loop})
+      : assert(childrenDelegate != null),
         controller = controller ?? _defaultPageController,
         super(key: key);
 
@@ -145,6 +148,8 @@ class CustomPageView extends StatefulWidget {
 
   /// {@macro flutter.widgets.scrollable.dragStartBehavior}
   final DragStartBehavior dragStartBehavior;
+
+  final bool loop;
 
   @override
   _PageViewState createState() => _PageViewState();
