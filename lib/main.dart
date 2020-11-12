@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_samples/carousel/carousel.dart';
+import 'package:flutter_samples/carousel/Carousel.dart';
 import 'package:flutter_samples/singlecarousel/SingleCarousel.dart';
-import 'package:flutter_samples/floatNavigator.dart';
+import 'package:flutter_samples/FloatNavigator.dart';
 import 'package:flutter_samples/home.dart';
 
 void main() => runApp(MyApp());
